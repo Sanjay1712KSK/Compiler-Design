@@ -4,7 +4,7 @@
 %}
 %%
 [aeiouAEIOU] {vowels++;}
-[a-zA-Z] {consonants++}
+[a-zA-Z] {consonants++;}
 .|\n      ;
 %%
 int main(){
@@ -13,4 +13,7 @@ int main(){
     printf("Vowels = %d\n",vowels);
     printf("Consonants = %d\n",consonants);
     return 0;
+}
+int yywrap(){
+    return 1;
 }
