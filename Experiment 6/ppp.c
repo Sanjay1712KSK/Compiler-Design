@@ -30,6 +30,32 @@ void follow(char c){
         }
     }
 }
+void table(){
+
+    printf("\nPredictive Parsing Table\n");
+
+    for(int i=0;i<n;i++){
+
+        char A = prod[i][0];     // LHS
+        char a = prod[i][2];     // first symbol of RHS
+
+        if(!isupper(a) && a!='$'){
+            printf("M[%c,%c] = %s\n",A,a,prod[i]);
+        }
+
+        else if(a=='$'){
+            printf("Use FOLLOW(%c)\n",A);
+            follow(A);
+            printf("\n");
+        }
+
+        else{
+            printf("Use FIRST(%c)\n",a);
+            first(a);
+            printf("\n");
+        }
+    }
+}
 int main(){
     char c;
     printf("Enter the number of productions: \n");
@@ -52,5 +78,6 @@ int main(){
         follow(c);
         printf("}\n");
     }
+    table();
     return 0;
 }
