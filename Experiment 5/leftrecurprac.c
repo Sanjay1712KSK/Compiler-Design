@@ -3,7 +3,7 @@
 int main(){
     char A, alpha[20],beta[20];
     printf("Enter the production : \n");
-    scanf("%c->%[^|]|%[^\n",&A,alpha,beta);
+    scanf("%c->%[^|]|%[^\n]",&A,alpha,beta);
     if(alpha[0]!=A){
         printf("No left recursion detected!!\n");
         return 0;
