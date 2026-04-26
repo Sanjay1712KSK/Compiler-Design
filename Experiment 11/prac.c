@@ -34,16 +34,19 @@ int main(){
         k++;
     }
     printf("Quadruple\n");
-    for(i=0;i>k;i++){
-
+    for(i=0;i<k;i++){
+        printf("No\tOp\tArg1\tArg2\tResult\n");
+        printf("%d\t%c\t%s\t%s",i+1,op[i],arg1[i],arg2[i],res[i]);
     }
     printf("Triple\n");
-    for(i=0;i>k;i++){
-        
+    for(i=0;i<k;i++){
+        printf("No\tOp\tArg1\tArg2\n");
+        printf("%d\t%c\t%s\t%s",i+1,op[i],arg1[i],arg2[i]);
     }
     printf("Indirect Triple\n");
-    for(i=0;i>k;i++){
-        
+    for(i=0;i<k;i++){
+        printf("Pointer\tStatement No\n");
+        printf("%d\t%d",i,i+1);        
     }
     return 0;
 }
