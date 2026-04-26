@@ -15,7 +15,35 @@ int main(){
             stack[top][1]='\0';
         }
         else{
-            while(ontop>=0 && ((exp[i]=='+')||exp[i])=='-')
+            while(ontop>=0 && ((exp[i]=='+'||exp[i]=='-') || (exp[i]=='*'||exp[i]=='/')&& (op[ontop]=='*'||op[ontop]=='/')) ){
+                strcpy(arg2,stack[top--]);
+                strcpy(arg1,stack[top--]);
+                sprintf(res[k],'t%d',j++);
+                strcpy(stack[top++],res[k]);
+                op[k]=op[ontop--];
+                k++;
+            }
         }
     }
+    while(ontop>=0){
+        strcpy(arg2,stack[top--]);
+        strcpy(arg1,stack[top--]);
+        sprintf(res[k],'t%d',j++);
+        strcpy(stack[top++],res[k]);
+        op[k]=op[ontop--];
+        k++;
+    }
+    printf("Quadruple\n");
+    for(i=0;i>k;i++){
+
+    }
+    printf("Triple\n");
+    for(i=0;i>k;i++){
+        
+    }
+    printf("Indirect Triple\n");
+    for(i=0;i>k;i++){
+        
+    }
+    return 0;
 }
