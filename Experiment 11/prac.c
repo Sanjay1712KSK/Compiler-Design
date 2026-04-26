@@ -9,5 +9,13 @@ int main(){
     int top=-1,i,j=1,k=0,ontop=-1;
     printf("Enter the expression :");
     scanf("%s",exp);
-    
+    for(i=0;exp[i]!='\0',i++){
+        if(isalnum(exp[i])){
+            stack[++top][0]=exp[i];
+            stack[top][1]='\0';
+        }
+        else{
+            while(ontop>=0 && ((exp[i]=='+')||exp[i])=='-')
+        }
+    }
 }
