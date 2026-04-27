@@ -15,15 +15,27 @@ int main(){
             printf("%s\t%s\tShift\n",stack,input+1);
         }
         if (top>=2 && stack[top-2]=='i' && stack[top-1]=='d'){
-            
+            stack[top-2]='E';
+            top--;
+            stack[top]='\0';
             printf("%s\t%s\tReduce\n",stack,input+1);
         }
         if (top>=3 && stack[top-3]=='E' && stack[top-2]=='+' && stack[top-1]=='E'){
-
+            stack[top-3]='E';
+            top-=2;
+            stack[top]='\0';
             printf("%s\t%s\tReduce E+E\n",stack,input+1);
         }
         if (top>=3 && stack[top-3]=='E' && stack[top-2]=='*' && stack[top-1]=='E'){
-
+            stack[top-3]='E';
+            top-=2;
+            stack[top]='\0';
+            printf("%s\t%s\tReduce E*E\n",stack,input+1);
+        }
+        if (top>=3 && stack[top-3]=='(' && stack[top-2]=='E' && stack[top-1]==')'){
+            stack[top-3]='E';
+            top-=2;
+            stack[top]='\0';
             printf("%s\t%s\tReduce E*E\n",stack,input+1);
         }
     }
