@@ -38,5 +38,11 @@ int main(){
             stack[top]='\0';
             printf("%s\t%s\tReduce E*E\n",stack,input+1);
         }
+        if(i==strlen(input) && top==1 && stack[0]=='E'){
+            printf("%s\t%s\tAccepted\n",stack,"");
+        }
+        if(i==strlen(input) && top!=1){
+            printf("%s\t%s\tRejected\n",stack,"");
+        }
     }
 }
